@@ -52,4 +52,4 @@ There is two installations methods available: Using Docker or setting up a local
 4. Access the API at `http://localhost:8080` and the documentation at `http://localhost:8080/docs`.
 
 ## Note
-The big JSON Data file is provided by @Bowserinator on GitHub and can be found on this repo : [Bowserinator/Periodic-Table-JSON](https://github.com/Bowserinator/Periodic-Table-JSON/blob/master/PeriodicTableJSON.json). (I don't even use 2% of the Data provided)
+The big JSON Data file is provided by Bowserinator on GitHub and can be found on this repo : [Bowserinator/Periodic-Table-JSON](https://github.com/Bowserinator/Periodic-Table-JSON/blob/master/PeriodicTableJSON.json). (I don't even use 2% of the Data provided)
