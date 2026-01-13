@@ -1,5 +1,6 @@
 import json
 import os
+import random
 from fastapi import APIRouter, HTTPException
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,3 +41,22 @@ def get_element_by_name(name: str):
     if not element:
         raise HTTPException(status_code=404, detail="Unknown element name")
     return element
+
+@router.get("/wiki/nb/{number}")
+def get_element_by_number(number: int):
+    element = next((e for e in elements_list if e["number"] == number), None)
+    if not element:
+        raise HTTPException(status_code=404, detail="Unknown element number")
+    return element.get("source")
+
+@router.get("/wiki/{name}")
+def get_element_by_name(name: str):
+    element = next((e for e in elements_list if e["name"].lower() == name.lower()), None)
+    if not element:
+        raise HTTPException(status_code=404, detail="Unknown element name")
+    return element.get("source")
+
+@router.get("/stats/count")
+def get_elements_count():
+    return {"count": len(elements_list)}
+
